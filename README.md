@@ -23,8 +23,6 @@
 * [OpenVPN](https://github.com/dperson/openvpn-client)
 * [Traefik](https://containo.us/traefik/)
 * [Let's Encrypt Automatic SSL certificates](https://letsencrypt.org/)
-* [Duplicati](https://www.duplicati.com/)
-
 ## Prerequisites
 * [Docker](https://www.docker.com/)
 * [Docker-Compose](https://docs.docker.com/compose/)

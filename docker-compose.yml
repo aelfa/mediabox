@@ -179,7 +179,6 @@ services:
         ipv4_address: 172.20.2.2
     ports:
       - 9000:9000
-      - 8000:8000
     labels:
       - com.centurylinklabs.watchtower.enable=true
       - traefik.enable=true
@@ -230,30 +229,6 @@ services:
       - TZ=${TIMEZONE}
     volumes:
       - ${CONTAINERS}/organizr:/config
-    restart: unless-stopped
-
-  duplicati:
-    image: linuxserver/duplicati
-    container_name: duplicati
-    networks:
-      default:
-        ipv4_address: 172.20.2.5
-    ports:
-      - 8200:8200
-    labels:
-      - com.centurylinklabs.watchtower.enable=true
-      - traefik.enable=true
-      - traefik.http.routers.duplicati.rule=Host(`duplicati.${DOMAIN}`)
-      - traefik.http.routers.duplicati.entrypoints=websecured
-      - traefik.http.routers.duplicati.tls.certresolver=myresolver
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TIMEZONE}
-    volumes:
-      - ${CONTAINERS}/duplicati/config:/config
-      - ${CONTAINERS}/duplicati/backups:/backups
-      - /:/source
     restart: unless-stopped
 
 networks:
