@@ -2,12 +2,14 @@ version: "3.3"
 
 services:
   watchtower:
-    image: containrrr/watchtower
+    image: nickfedor/watchtower:1.19.0
     container_name: watchtower
     network_mode: host
+    environment:
+      - TZ=${TIMEZONE}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ${HOME}/.docker/config.json:/config.json
+      - ${HOME}/.docker/config.json:/config.json:ro
     command: --label-enable --cleanup --schedule "0 0 4 * * *"
     restart: unless-stopped
 

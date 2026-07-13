@@ -16,7 +16,7 @@
 * [Deluge](https://deluge-torrent.org/) (built-in dark mode)
 * [Calibre Web](https://github.com/janeczku/calibre-web)
 * [Portainer 2.0](https://www.portainer.io/)
-* [Watchtower](https://github.com/containrrr/watchtower)
+* [Watchtower](https://github.com/nicholas-fedor/watchtower)
 * [Organizr](https://github.com/causefx/Organizr)
 
 ### Security
